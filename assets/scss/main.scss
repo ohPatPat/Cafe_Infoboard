@@ -1,0 +1,929 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// Globals reset
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+//COLOR MODS
+$lightGreen: #e6f3dd;
+$normalGreen: #c6ebb8;
+$mediumGreen: #285548;
+$darkGreen: #022c23;
+
+// Font control
+h1,
+h2,
+h3 {
+    color: $darkGreen;
+    font-weight: 800;
+}
+
+// "Opasity bug which is also a feature" fix
+#stackingOrderFix {
+    position: relative;
+    z-index: 9999999;
+}
+
+// top navigation for the site
+header {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 0px;
+    height: 25vw;
+    width: 100%;
+    background-image: url("../img/decoration/roasted-coffee-beans.png");
+    background-repeat: no-repeat;
+    background-position: 0% 20%;
+    background-size: 100%;
+    box-shadow: none;
+    z-index: 999999;
+
+    // The visible navigation
+    nav {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        #navWrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80vw;
+            height: 80%;
+            margin: auto;
+            a {
+                z-index: 999999;
+                // Logo
+                img {
+                    height: 13vw;
+                }
+            }
+            // Burger menu button before its opens
+            #closedBurger {
+                height: 8vw;
+                z-index: 999999;
+                cursor: pointer;
+                overflow: visible;
+                transition: 0.1s ease-in-out;
+
+                #BurgerLineTop {
+                    transition: 0.1s ease-in-out;
+                    fill: white;
+                }
+                #BurgerLineCenter {
+                    transition: 0.1s ease-in-out;
+                    fill: $lightGreen;
+                }
+                #BurgerLineBottom {
+                    transition: 0.1s ease-in-out;
+                    fill: white;
+                }
+
+                // Burger menu button after its opens
+                &.openBurger {
+                    height: 8vw;
+                    z-index: 999999;
+                    overflow: visible;
+                    transition: 0.1s ease-in-out;
+                    #BurgerLineTop {
+                        transform-origin: center;
+                        transform: translate(-150px, 150px) rotate(45deg);
+                        transition: 0.1s ease-in-out;
+                        fill: $darkGreen;
+                    }
+                    #BurgerLineCenter {
+                        opacity: 0;
+                        transition: 0.1s ease-in-out;
+                        fill: $darkGreen;
+                    }
+                    #BurgerLineBottom {
+                        transform-origin: center;
+                        width: 100%;
+                        transform: translate(-150px, -150px) rotate(-45deg);
+                        transition: 0.1s ease-in-out;
+                        fill: $darkGreen;
+                    }
+                }
+            }
+        }
+
+        // Burger menu after its opens
+        #burgerNav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            background-color: $mediumGreen;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 100vw;
+            transition: 0.1s ease-in-out;
+            z-index: 999998;
+
+            ul {
+                padding-top: 25vh;
+
+                li {
+                    font-size: 4.5vw;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding-bottom: 5vw;
+
+                    a {
+                        text-transform: uppercase;
+                        color: $normalGreen;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            // Burger menu footer
+            footer {
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100vw;
+                padding-bottom: 20px;
+                background-color: $mediumGreen;
+
+                a {
+                    color: $darkGreen;
+                    text-align: left;
+                    cursor: pointer;
+                    font-size: 5vw;
+                    font-weight: 600;
+                    text-decoration: underline;
+                    padding: 2vw 10vw;
+                }
+            }
+
+            // Burger menu class so it opens
+            &.visible {
+                left: 0;
+            }
+        }
+    }
+}
+#secTop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    figure {
+        position: relative;
+        margin-top: -20px;
+        width: 100%;
+        height: 250px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 4.7vw;
+                padding: 140px 0 0;
+            }
+            h2 {
+                color: white;
+                text-align: center;
+                font-size: 4vw;
+                font-weight: 500;
+                padding: 0vw 5vw 15vw;
+                font-style: italic;
+            }
+        }
+    }
+
+    article {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+            width: 80vw;
+            margin: auto;
+
+            font-size: 4vw;
+            line-height: 1.5;
+        }
+        .centerText {
+            font-size: 3.7vw;
+            text-align: center;
+            padding-top: 10vw;
+        }
+    }
+}
+#secStudiemiljøet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        text-align: center;
+
+        font-size: 4.7vw;
+        padding: 20vw 0 5vw;
+    }
+    #studiemiljøetArticle {
+        p {
+            width: 80vw;
+            margin: auto;
+
+            font-size: 4vw;
+            line-height: 1.5;
+        }
+    }
+
+    #figureWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "Right Center Left";
+        justify-content: center;
+        gap: 13vw;
+        overflow-x: hidden;
+        padding-top: 0;
+        padding-bottom: 5vw;
+        #centerFigure {
+            grid-area: Center;
+            transition: 0.3s ease-in-out;
+            img {
+                width: 45vw;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                padding-bottom: 1vw;
+            }
+            figcaption {
+                h3 {
+                    font-size: 4vw;
+                    padding-bottom: 1vw;
+                }
+                ul {
+                    width: fit-content;
+                    margin: auto;
+                    li {
+                        padding-top: 1vw;
+                        font-size: 3.5vw;
+                        list-style: disc outside;
+                        width: fit-content;
+                    }
+                }
+            }
+        }
+        #leftFigure {
+            grid-area: Left;
+        }
+        #rightFigure {
+            grid-area: Right;
+        }
+        #leftFigure,
+        #rightFigure {
+            transition: 0.3s ease-in-out;
+            img {
+                opacity: 50%;
+                width: 25vw;
+                margin: auto;
+                padding-top: 10vw;
+            }
+            figcaption {
+                h3 {
+                    display: none;
+                }
+                ul {
+                    li {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+#collapsibleWrapper {
+    #collapsible {
+        padding-top: 2vw;
+        overflow: hidden;
+        height: 0;
+        transition: 0.3s ease-in-out;
+
+        &.active {
+            padding-bottom: 5vw;
+            height: auto;
+            transition: 0.3s ease-in-out;
+        }
+    }
+    small {
+        float: right;
+        padding-right: 10vw;
+        font-size: 5vw;
+        font-weight: 300;
+        text-decoration: underline;
+        cursor: pointer;
+        transition: 0.1s ease-in-out;
+    }
+    #closeCollapsible {
+        display: none;
+        &.smallVisible {
+            display: block;
+        }
+    }
+    #openCollapsible {
+        &.smallHidden {
+            display: none;
+        }
+    }
+}
+
+#secBrobygning {
+    padding-top: 20vw;
+}
+
+/** ACCORDION */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1vw 10vw;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    .a-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 1vw;
+        .a-btn {
+            margin: 0;
+            position: relative;
+            padding: 5vw 5vw;
+            width: 100%;
+            color: #ffffff;
+            display: block;
+            font-weight: 500;
+            font-size: 5vw;
+            background-color: $darkGreen;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+            span {
+                display: block;
+                position: absolute;
+                height: 14px;
+                width: 14px;
+                right: 20px;
+                top: 18px;
+            }
+        }
+        .a-panel {
+            width: 100%;
+            transition: all 0.2s ease-in-out;
+            opacity: 0;
+            height: auto;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0px 2vw;
+            transition: all 0.3s ease-in-out;
+
+            p {
+            }
+            ul {
+                li {
+                    font-style: italic;
+                    list-style: inside;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &.active {
+            .a-panel {
+                padding: 5vw 2vw 2vw;
+                opacity: 1;
+                max-height: fit-content;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+}
+
+video {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    margin: auto;
+    padding: 15vw 0 0;
+    z-index: 1;
+}
+
+#siteFooter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 50px;
+    padding-bottom: 40px;
+    background-color: $darkGreen;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        height: 80vw;
+        top: -40vw;
+        left: -40vw;
+        opacity: 40%;
+    }
+    p {
+        color: $normalGreen;
+        text-align: right;
+        font-weight: 400;
+        font-size: 4.5vw;
+        padding: 20px 10vw 50px;
+    }
+    a {
+        color: $normalGreen;
+        text-align: right;
+        cursor: pointer;
+        font-size: 7vw;
+        font-weight: 600;
+        text-decoration: underline;
+        padding: 10px 10vw 0px;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    // top navigation for the site
+    header {
+        height: 3.5vw;
+        background-position: 0% 0%;
+        box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.534);
+        // The visible navigation
+        nav {
+            #navWrapper {
+                height: 100%;
+                width: 90vw;
+                a {
+                    height: 80%;
+                    z-index: 999999;
+
+                    // Logo
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                // Burger menu button before its opens
+                #closedBurger {
+                    height: 50%;
+
+                    &:hover {
+                        transition: 1s ease-in-out;
+
+                        #BurgerLineTop {
+                        }
+                        #BurgerLineCenter {
+                            animation: hoverMation 0.2s 0.2s ease-in-out infinite alternate;
+                        }
+                        #BurgerLineBottom {
+                            animation: hoverMation 0.2s ease-in-out infinite alternate;
+                        }
+
+                        @keyframes hoverMation {
+                            to {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    #BurgerLineTop {
+                        transition: 0.1s ease-in-out;
+                        fill: white;
+                    }
+                    #BurgerLineCenter {
+                        transition: 0.1s ease-in-out;
+                        fill: white;
+                    }
+                    #BurgerLineBottom {
+                        transition: 0.1s ease-in-out;
+                        fill: white;
+                    }
+
+                    // Burger menu button after its opens
+                    &.openBurger {
+                        height: 50%;
+                        z-index: 999999;
+                        overflow: visible;
+                        transition: 0.1s ease-in-out;
+                        #BurgerLineTop {
+                            transform-origin: center;
+                            transform: translate(-150px, 150px) rotate(45deg);
+                            transition: 0.1s ease-in-out;
+                            fill: $darkGreen;
+                        }
+                        #BurgerLineCenter {
+                            opacity: 0;
+                            transition: 0.1s ease-in-out;
+                            fill: $darkGreen;
+                        }
+                        #BurgerLineBottom {
+                            transform-origin: center;
+                            width: 100%;
+                            transform: translate(-150px, -150px) rotate(-45deg);
+                            transition: 0.1s ease-in-out;
+                            fill: $darkGreen;
+                        }
+                    }
+                }
+            }
+
+            // Burger menu after its opens
+            #burgerNav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                background-color: $mediumGreen;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+                left: 100vw;
+                transition: 0.1s ease-in-out;
+                z-index: 999998;
+                ul {
+                    padding-top: 20vh;
+
+                    li {
+                        font-size: 2vw;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        padding-bottom: 2vw;
+
+                        a {
+                            text-transform: uppercase;
+                            color: $normalGreen;
+                            cursor: pointer;
+                            &:hover {
+                                color: $lightGreen;
+                            }
+                        }
+                    }
+                }
+
+                // Burger menu footer
+                footer {
+                    padding-bottom: 20px;
+                    background-color: $mediumGreen;
+
+                    a {
+                        text-align: right;
+                        font-size: 2vw;
+                        padding: 0.5vw 5vw;
+                    }
+                }
+
+                // Burger menu class so it opens
+                &.visible {
+                    left: 0;
+                }
+            }
+        }
+    }
+    #secTop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        figure {
+            top: -600px;
+            position: relative;
+            width: 100%;
+            height: auto;
+            margin-bottom: 500px;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: auto;
+
+            }
+            figcaption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                h1 {
+                    color: white;
+                    text-align: center;
+                    font-size: 3.5vw;
+                    padding: 800px 0 0;
+                }
+                h2 {
+                    color: white;
+                    text-align: center;
+                    font-size: 2vw;
+                    font-weight: 500;
+                    padding: 0vw 5vw 15vw;
+                }
+            }
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p {
+                width: 90vw;
+                margin: auto;
+                font-size: 1.5vw;
+                line-height: 1.5;
+            }
+            .centerText {
+                font-size: 2vw;
+                text-align: center;
+                padding-top: 5vw;
+            }
+        }
+        video {
+            width: 80%;
+            margin: auto;
+            padding: 3vw 0;
+            z-index: 1;
+        }
+    }
+    #secStudiemiljøet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            text-align: center;
+
+            font-size: 3vw;
+            padding: 10vw 0 5vw;
+        }
+        #studiemiljøetArticle {
+            p {
+                width: 40vw;
+                margin: auto;
+
+                font-size: 1.5vw;
+                line-height: 1.5;
+            }
+        }
+
+        #figureWrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "Right Center Left";
+            justify-content: center;
+            gap: 5vw;
+            overflow-x: hidden;
+            padding-top: 0;
+            padding-bottom: 5vw;
+            #centerFigure {
+                grid-area: Center;
+                transition: 0.3s ease-in-out;
+                img {
+                    width: 15vw;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding-bottom: 1vw;
+                }
+                figcaption {
+                    h3 {
+                        font-size: 2vw;
+                        padding-bottom: 1vw;
+                        text-align: center;
+                    }
+                    ul {
+                        width: fit-content;
+                        margin: auto;
+                        li {
+                            padding-top: 1vw;
+                            font-size: 2vw;
+                            list-style: disc outside;
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+            #leftFigure {
+                grid-area: Left;
+            }
+            #rightFigure {
+                grid-area: Right;
+            }
+            #leftFigure,
+            #rightFigure {
+                transition: 0.3s ease-in-out;
+                img {
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    opacity: 50%;
+                    width: 15vw;
+                    margin: auto;
+                    padding-top: 0vw;
+                }
+                figcaption {
+                    h3 {
+                        display: none;
+                    }
+                    ul {
+                        li {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #collapsibleWrapper {
+        #collapsible {
+            padding-top: 2vw;
+            overflow: hidden;
+            height: 0;
+            transition: 0.3s ease-in-out;
+
+            &.active {
+                padding-bottom: 2vw;
+                height: auto;
+                transition: 0.3s ease-in-out;
+            }
+        }
+        small {
+            float: right;
+            padding-right: 30vw;
+            font-size: 1.5vw;
+            font-weight: 300;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+        }
+        #closeCollapsible {
+            display: none;
+            &.smallVisible {
+                display: block;
+            }
+        }
+        #openCollapsible {
+            &.smallHidden {
+                display: none;
+            }
+        }
+    }
+
+    #secBrobygning {
+        padding-top: 10vw;
+    }
+
+    /** ACCORDION */
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1vw 10vw;
+    }
+
+    .accordion {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        .a-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-bottom: 1vw;
+            .a-btn {
+                margin: 0;
+                position: relative;
+                padding: 2vw 2vw;
+                width: 100%;
+                color: #ffffff;
+                display: block;
+                font-weight: 500;
+                font-size: 2vw;
+                background-color: $darkGreen;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                border-radius: 5px;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+                span {
+                    display: block;
+                    position: absolute;
+                    height: 14px;
+                    width: 14px;
+                    right: 20px;
+                    top: 18px;
+                }
+            }
+            .a-panel {
+                width: 100%;
+                transition: all 0.2s ease-in-out;
+                opacity: 0;
+                height: auto;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0px 2vw;
+                transition: all 0.3s ease-in-out;
+                p {
+                }
+                ul {
+                    li {
+                        font-style: italic;
+                        list-style: inside;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+
+            &.active {
+                .a-panel {
+                    padding: 2vw 2vw 2vw;
+                    opacity: 1;
+                    max-height: fit-content;
+                    transition: all 0.3s ease-in-out;
+
+                    column-count: 2;
+                    gap: 25px;
+                }
+            }
+        }
+    }
+    video {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50%;
+        margin: auto;
+        padding: 5vw 0 0;
+        z-index: 1;
+    }
+
+    #siteFooter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+        padding-bottom: 50px;
+        background-color: $mediumGreen;
+        img {
+            position: absolute;
+            height: 50vw;
+            top: -25vw;
+            left: -25vw;
+            opacity: 40%;
+        }
+
+        p {
+            color: $normalGreen;
+            font-weight: 400;
+            font-size: 1.5vw;
+            padding: 20px 5vw 50px;
+        }
+        a {
+            color: $normalGreen;
+            text-align: right;
+            cursor: pointer;
+            font-size: 2vw;
+            font-weight: 600;
+            text-decoration: underline;
+            padding: 10px 5vw 0px;
+        }
+    }
+}

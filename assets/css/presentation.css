@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  color: #022c23;
+  font-weight: 800;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#Wrapper1 {
+  height: 100vh;
+  width: 15vw;
+  padding: 0 1.5vw 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Wrapper1 #Logo {
+  width: 10vw;
+}
+
+#Wrapper1 figure figcaption {
+  width: 100%;
+  left: 0;
+}
+
+#Wrapper1 figure figcaption h3 {
+  color: #022c23;
+  margin-bottom: 1vh;
+}
+
+#Wrapper1 figure figcaption ul li {
+  font-size: 1vw;
+  list-style: disc inside;
+  color: #285548;
+  line-height: 1.5;
+}
+
+#Wrapper2 {
+  height: 100vh;
+  width: 65vw;
+  padding-right: 3vw;
+}
+
+#Wrapper2 h1 {
+  color: #022c23;
+  font-size: 3vw;
+  padding: 5vh 0 0;
+}
+
+#Wrapper2 h2 {
+  color: #285548;
+  font-size: 1.5vw;
+  font-weight: 500;
+  padding: 0vw 0vw 5vw;
+  font-style: italic;
+}
+
+#Wrapper2 article {
+  width: 100%;
+  -webkit-column-count: 2;
+          column-count: 2;
+  gap: 1.5vw;
+}
+
+#Wrapper2 article p {
+  font-size: 1.1vw;
+  line-height: 1.6;
+}
+
+#Wrapper3 {
+  position: relative;
+  height: 100vh;
+  width: 20vw;
+  background-image: url("../img/decoration/close-up-roasted-coffee-beans-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Wrapper3 #Hours {
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+  margin-top: 5vh;
+}
+
+#Wrapper3 #Minutes {
+  color: white;
+  text-align: center;
+  font-size: 5vw;
+  margin-top: -2.5vh;
+}
+
+#Wrapper3 img {
+  position: absolute;
+  width: 50%;
+  top: 70vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#Wrapper3 #Link {
+  color: white;
+  text-align: center;
+  font-size: 1vw;
+  margin-top: 65vh;
+}
