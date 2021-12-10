@@ -55,6 +55,7 @@ body {
 }
 
 #Wrapper1 figure figcaption h3 {
+  font-size: 1vw;
   color: #022c23;
   margin-bottom: 1vh;
 }

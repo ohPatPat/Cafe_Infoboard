@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="BurgerMenuLayer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -9,28 +8,3 @@
 	<rect id="BurgerLineTop" x="0" y="0" fill="#022C23" width="653.19" height="92.46"/>
 </g>
 </svg>
-=======
-<<<<<<< HEAD
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="BurgerMenuLayer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 653.19 520.93" enable-background="new 0 0 653.19 520.93" xml:space="preserve">
-<g id="BurgerMenuGroup">
-	<rect id="BurgerLineBottom" x="0.03" y="428.47" fill="#022C23" width="489.86" height="92.46"/>
-	<rect id="BurgerLineCenter" x="0" y="214.23" fill="#022C23" width="326.59" height="92.46"/>
-	<rect id="BurgerLineTop" x="0" y="0" fill="#022C23" width="653.19" height="92.46"/>
-</g>
-</svg>
-=======
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="BurgerMenuLayer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" viewBox="0 0 653.19 520.93" enable-background="new 0 0 653.19 520.93" xml:space="preserve">
-<g id="BurgerMenuGroup">
-	<rect id="BurgerLineBottom" x="0.03" y="428.47" fill="#022C23" width="489.86" height="92.46"/>
-	<rect id="BurgerLineCenter" x="0" y="214.23" fill="#022C23" width="326.59" height="92.46"/>
-	<rect id="BurgerLineTop" x="0" y="0" fill="#022C23" width="653.19" height="92.46"/>
-</g>
-</svg>
->>>>>>> 40c4e03a05cbc09181b440f0afe27206a9d64821
->>>>>>> 456b47b7a29bb5d154166b7a3f3447d37824a11a
